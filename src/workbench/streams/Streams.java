@@ -42,13 +42,5 @@ public class Streams {
                 .map((c) -> Cat.getBreedName(c.getBreed()))
                 .distinct()
                 .toList();
-
-        // Returns a list of the cat's names that have a name longer than 6.
-        var longnamedBois = basket.stream()
-                .map(Cat::getName)
-                .filter((cn) -> cn.length() > 6)
-                .toList();
-
-
     }
 }
