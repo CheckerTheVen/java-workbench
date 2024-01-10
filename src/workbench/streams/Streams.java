@@ -48,5 +48,7 @@ public class Streams {
                 .map(Cat::getName)
                 .filter((cn) -> cn.length() > 6)
                 .toList();
+
+
     }
 }
