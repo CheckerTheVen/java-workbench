@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Manages the display and the user interaction.
+ */
 public class GameFrame extends JFrame implements KeyListener {
     private static final String TITLE = "tinygame";
     private static final int CONTENT_WIDTH = 1024;
@@ -13,6 +16,10 @@ public class GameFrame extends JFrame implements KeyListener {
     public final Graphics2D levelGraphics;
     public final Graphics2D entityGraphics;
 
+    /**
+     * Displays a newly created {@link JFrame} with its designated,
+     * transparent layers for rendering the game's components.
+     */
     public GameFrame() {
         super(TITLE);
 
