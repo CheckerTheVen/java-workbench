@@ -8,7 +8,7 @@ import java.util.List;
  * Represents a field of terrain made of a collection
  * of {@link Tile}s.
  */
-public class Level {
+public class Level implements Renderable {
     /** Defines the file path for the level definition. */
     private static final String LEVEL_PATH = "res/level";
 
@@ -56,5 +56,10 @@ public class Level {
                 );
             }
         }
+    }
+
+    @Override
+    public void render(Graphics2D graphics) {
+        graphics.drawImage(level, 0, 0, null);
     }
 }

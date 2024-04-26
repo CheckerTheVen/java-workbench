@@ -14,8 +14,7 @@ public class Program {
 
         Level main = new Level(6, 6, levelTiles, "main");
 
-        Renderer renderer = new Renderer();
-        renderer.render(main, game.levelGraphics);
+        main.render(game.levelGraphics);
 
         // TODO Manage game loop
     }
