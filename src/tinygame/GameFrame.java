@@ -13,8 +13,7 @@ public class GameFrame extends JFrame implements KeyListener {
     private static final int CONTENT_WIDTH = 1024;
     private static final int CONTENT_HEIGHT = 600;
 
-    public final Graphics2D levelGraphics;
-    public final Graphics2D entityGraphics;
+    private final LevelLayer level;
 
     /**
      * Displays a newly created {@link JFrame} with its designated,
@@ -28,7 +27,7 @@ public class GameFrame extends JFrame implements KeyListener {
         this.setBackground(Color.BLACK);
         this.setResizable(false);
 
-        JPanel levelLayer = new JPanel();
+        LevelLayer levelLayer = new LevelLayer();
         levelLayer.setPreferredSize(new Dimension(CONTENT_WIDTH, CONTENT_HEIGHT));
         levelLayer.setDoubleBuffered(true);
         levelLayer.setVisible(true);
@@ -51,27 +50,36 @@ public class GameFrame extends JFrame implements KeyListener {
         this.pack();
 
         this.addKeyListener(this);
+
         this.setVisible(true);
 
-        levelGraphics = (Graphics2D) levelLayer.getGraphics();
-        entityGraphics = (Graphics2D) entityLayer.getGraphics();
+        this.level = levelLayer;
+    }
 
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) this.dispose();
+        // TODO Implement cases for further inputs
     }
 
     @Override
     public void keyTyped(KeyEvent e) {}
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_ESCAPE:
-                this.dispose();
-                break;
+    public void keyReleased(KeyEvent e) {}
 
-            // TODO Implement cases for further inputs
-        }
+    public void setActiveLevel(final Level level) {
+        this.level.activeLevel = level;
+        this.level.repaint();
     }
 
-    @Override
-    public void keyReleased(KeyEvent e) {}
+    private static class LevelLayer extends JPanel {
+        public Level activeLevel;
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            if (activeLevel == null) return;
+            g.drawImage(activeLevel.level, 0, 0, null);
+        }
+    }
 }

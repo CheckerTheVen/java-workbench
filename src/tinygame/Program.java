@@ -13,8 +13,7 @@ public class Program {
         }
 
         Level main = new Level(6, 6, levelTiles, "main");
-
-        main.render(game.levelGraphics);
+        game.setActiveLevel(main);
 
         // TODO Manage game loop
     }
