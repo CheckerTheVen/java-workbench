@@ -5,6 +5,9 @@ import io.reactivex.rxjava3.subjects.ReplaySubject;
 
 import java.util.Random;
 
+/**
+ * This program serves as an example of how the observable pattern can be used in Java.
+ */
 public class Program {
     public static void main(String[] args) {
         String[] senders = {"Checker", "Beck", "Gerard"};
