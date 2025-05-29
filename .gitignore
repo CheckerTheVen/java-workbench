@@ -1,3 +1,6 @@
+### Local project parts ###
+src/workbench
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
