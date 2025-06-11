@@ -1,32 +1,11 @@
-### Local project parts ###
-src/workbench
+# local-only projects
+src/local
 
-### IntelliJ IDEA ###
+# IntelliJ
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
+# Visual Studio Code
 .vscode/
 
-### Mac OS ###
+# Mac OS
 .DS_Store
